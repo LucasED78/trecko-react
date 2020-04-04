@@ -1,0 +1,22 @@
+.Button {
+  min-width: 150px;
+  min-height: 50px;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  border: 0;
+  border-radius: 100px;
+  background-color: #00B0FF;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+  outline: none;
+}
+
+.Button:hover {
+  box-shadow: 0px 0px 8px #00B0FF;
+}
+
+.Button:active { background-color: rgb(0, 150, 219); }
