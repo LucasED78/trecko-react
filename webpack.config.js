@@ -28,6 +28,10 @@ module.exports = {
             modules: true,
           }
         }]
+      },
+      {
+        test: /\.(png|jpg|ttf)$/,
+        use: 'url-loader'
       }
     ]
   },
