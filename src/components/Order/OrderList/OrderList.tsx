@@ -11,7 +11,7 @@ const OrderList = (props: OrderListProps) => {
   return (
     <>
       {
-        props?.order?.tracks.reverse().map((e, i, arr) => {
+        props?.order?.tracks.map((e, i, arr) => {
           return (
             <React.Fragment key={Math.random()}>
               <Order

@@ -24,7 +24,7 @@ class Order {
   static fromJSON(data: any): Order {
     return new Order(
       data.code,
-      data.tracks.map((e: any) => OrderSteps.fromJSON(e)),
+      data.tracks.map((e: any) => OrderSteps.fromJSON(e)).reverse(),
       data.isDelivered,
       data.postedAt,
       data.updatedAt
