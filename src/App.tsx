@@ -11,13 +11,15 @@ import Loading from './components/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import Title from './components/Title/Title';
 import 'react-toastify/dist/ReactToastify.min.css';
+import OrderList from './components/Order/OrderList/OrderList';
+import Order from './core/models/Order';
 
 const App = () => {
   const treckoHttp = new TreckoHttpImpl();
   const treckoRepository = new TreckoRepositoryImpl(treckoHttp);
 
   const [value, setValue] = useState('');
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState<Order | null>(null);
   const [loading, setLoading] = useState(false);
 
   const buttonClickedHandler = async () => {
@@ -27,10 +29,15 @@ const App = () => {
     try {
       const { data } = await treckoRepository.track(value);
       
-      setOrder(data);
+      const orders = Order.fromJSON(data);
+
+      setOrder(orders);
 
       setLoading(false);
+
+      if (orders.isDelivered) toast.success('Parabéns! Sua encomenda foi entrege. 😁')
     } catch(e){
+      console.error(e);
       setLoading(false);
       toast.error('Código inválido ou incorreto');
     }
@@ -64,7 +71,7 @@ const App = () => {
             </>
           </FlexRow>
 
-          {loading ? <Loading /> : null}
+          {loading ? <Loading /> : <OrderList order={order} />}
       </>
     </ContentWrapper>
   )
