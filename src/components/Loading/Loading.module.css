@@ -4,6 +4,7 @@
   border: 6px solid rgb(176, 172, 248);
   border-radius: 100%;
   position: relative;
+  margin: auto;
 }
 
 .Spinner {
