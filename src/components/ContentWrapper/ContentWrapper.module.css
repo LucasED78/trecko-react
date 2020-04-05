@@ -3,3 +3,11 @@
   margin: auto;
   justify-content: center;
 }
+
+@media (min-width: 580px)  and (max-width: 780px) {
+  .Content__wrapper { width: 600px; }
+}
+
+@media (max-width: 579px) {
+  .Content__wrapper { width: 400px; }
+}
