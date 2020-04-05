@@ -1,9 +1,9 @@
 import TreckoHttpResponse from "../TreckoHttpResponse";
 
 class TreckoHttpResponseImpl implements TreckoHttpResponse {
-  data: Object;
+  data: any;
 
-  constructor(data: Object) {
+  constructor(data: any) {
     this.data = data;
   }
 }

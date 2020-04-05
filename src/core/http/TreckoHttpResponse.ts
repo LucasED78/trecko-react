@@ -1,5 +1,5 @@
 interface TreckoHttpResponse {
-  data: Object
+  data: any;
 }
 
 export default TreckoHttpResponse;
